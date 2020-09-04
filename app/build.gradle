@@ -20,9 +20,47 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0'
+
+    //version
+    def RETROFIT_VER = '2.9.0'
+    def GLIDE_VER = '4.11.0'
+    def GSON_VER = '2.8.6'
+    def OKHTTP_VER = '4.8.1'
+    def OAUTH_VER = '2.1.1'
+    def SIGNPOST_VER = '1.1.0'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$GLIDE_VER"
+    annotationProcessor "com.github.bumptech.glide:compiler:$GLIDE_VER"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VER"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VER"
+
+    //gson
+    implementation "com.google.code.gson:gson:$GSON_VER"
+
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:$OKHTTP_VER"
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VER"
+
+    //oauth
+    implementation "oauth.signpost:signpost-core:$OAUTH_VER"
+
+    //signpost
+    implementation "se.akerfeldt:okhttp-signpost:$SIGNPOST_VER"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
